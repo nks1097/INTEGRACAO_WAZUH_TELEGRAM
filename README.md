@@ -50,6 +50,8 @@ Documentação completa e passo a passo para configurar o **Wazuh Manager** para
    curl -s "https://api.telegram.org/bot${TOKEN}/getUpdates" | python3 -m json.tool
    ```
 
+![Mensagens enviadas ao Bot no Telegram](imagens/9.png)
+
 4. Na resposta em JSON retornada pelo comando, localize o objeto `"chat"`:
 
    ```json
