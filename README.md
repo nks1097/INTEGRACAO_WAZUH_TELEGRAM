@@ -208,3 +208,4 @@ Agent: siem (127.0.0.1)
 Time: 2026-07-23T22:09:00Z
 Location: /var/log/secure
 ```
+ ![Resultado do curl getUpdates com o Chat ID](imagens/8.png)
