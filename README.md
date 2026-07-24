@@ -211,3 +211,5 @@ Time: 2026-07-23T22:09:00Z
 Location: /var/log/secure
 ```
  ![Resultado do curl getUpdates com o Chat ID](imagens/8.png)
+
+ **Link de Referencia de Video** https://www.youtube.com/watch?v=qnY_xn_y5IQ&list=PLHjuPxrwcdsZub-nvo_yKgCu-KwSn2qTn&index=20
