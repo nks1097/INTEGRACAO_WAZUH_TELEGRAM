@@ -17,22 +17,22 @@ Documentação completa e passo a passo para configurar o **Wazuh Manager** para
 
 1. No aplicativo Telegram, pesquise por `@BotFather` (certifique-se de escolher o perfil oficial verificado com o selo azul).
 
-![BotFather no Telegram](imagens/1.png)
-
 2. Inicie a conversa enviando os comandos:
    ```text
    /start
    /newbot
    ```
-3. O **BotFather** solicitará duas informações:
+   ![BotFather no Telegram](imagens/1.png)
+   
+4. O **BotFather** solicitará duas informações:
    * **Nome de exibição:** Exemplo: `Wazuh Alerts`
    * **Username do bot:** Deve terminar obrigatoriamente com `bot`. Exemplo: `alertas_agora_wazuh_bot`
-4. O BotFather enviará uma mensagem de confirmação contendo o **TOKEN de Acesso à API HTTP**:
+5. O BotFather enviará uma mensagem de confirmação contendo o **TOKEN de Acesso à API HTTP**:
    * *Formato:* `8833221681:AAGUj7V_kUcvy6xFeXn9cwRvpCHUfKS7cik`
 
-📌 **Guarde este TOKEN de forma segura**, pois ele será utilizado para autenticar as chamadas da API.
+    ![Token gerado pelo BotFather](imagens/2.png)
 
-![Token gerado pelo BotFather](imagens/2.png)
+📌 **Guarde este TOKEN de forma segura**, pois ele será utilizado para autenticar as chamadas da API.
 
 ---
 
@@ -41,7 +41,7 @@ Documentação completa e passo a passo para configurar o **Wazuh Manager** para
 1. Abra uma conversa direta com o bot que você acabou de criar (link: `t.me/SEU_BOT_USERNAME`).
 2. Clique no botão **Start** (Iniciar) e envie mensagens de teste (exemplo: `ola` ou `teste`).
 
-![Mensagens enviadas ao Bot no Telegram](imagens/4.png)
+![Mensagens enviadas ao Bot no Telegram](imagens/3.png)
 
 3. No terminal do servidor Wazuh Manager, defina a variável temporária com o seu **TOKEN** e consulte os updates da API do Telegram:
 
@@ -63,7 +63,7 @@ Documentação completa e passo a passo para configurar o **Wazuh Manager** para
 
 ✅ O valor numérico do campo `"id"` (exemplo: `211332857`) é o seu **CHAT_ID**. Anote este número.
 
-![Resultado do curl getUpdates com o Chat ID](imagens/3.png)
+![Resultado do curl getUpdates com o Chat ID](imagens/4.png)
 
 ⚠️ **Nota:** Se a lista `result` retornar vazia `[]`, certifique-se de ter clicado em **Start** e enviado uma nova mensagem no chat privado com o bot antes de rodar o comando `curl` novamente.
 
@@ -145,6 +145,8 @@ Dentro da tag `<ossec_config>`, insira o bloco da nova integração:
 📌 **Atenção:**
 * Substitua `PEGA_AQUI_SEU_TOKEN` pelo seu Token real mantendo a palavra `bot` imediatamente antes dele (ex: `bot8833221681:AA.../sendMessage`).
 * A tag `<level>8</level>` define que apenas alertas com nível 8 ou superior dispararão a notificação no Telegram (para testes iniciais, você pode alterar temporariamente para `<level>3</level>`).
+
+  ![Resultado do curl getUpdates com o Chat ID](imagens/6.png)
 
 Salve o arquivo (`Ctrl + O`, `Enter`, `Ctrl + X`).
 
