@@ -46,7 +46,7 @@ Documentação completa e passo a passo para configurar o **Wazuh Manager** para
 3. No terminal do servidor Wazuh Manager, defina a variável temporária com o seu **TOKEN** e consulte os updates da API do Telegram:
 
    ```bash
-   TOKEN="8833221681:AAGUj7V_kUcvy6xFeXn9cwRvpCHUfKS7cik"
+   TOKEN="coloca_seu_token"
    curl -s "https://api.telegram.org/bot${TOKEN}/getUpdates" | python3 -m json.tool
    ```
 
@@ -137,7 +137,7 @@ Dentro da tag `<ossec_config>`, insira o bloco da nova integração:
 <integration>
   <name>custom-telegram</name>
   <level>8</level>
-  <hook_url>https://api.telegram.org/bot8833221681:AAGUj7V_kUcvy6xFeXn9cwRvpCHUfKS7cik/sendMessage</hook_url>
+  <hook_url>https://api.telegram.org/botPEGA_AQUI_SEU_TOKEN/sendMessage</hook_url>
   <alert_format>json</alert_format>
 </integration>
 ```
