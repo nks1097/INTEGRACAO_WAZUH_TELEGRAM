@@ -1,0 +1,20 @@
+#!/bin/sh
+# Copyright (C) 2015-2026, Wazuh Inc.
+# Wrapper script for Wazuh Telegram Integration
+
+WPYTHON_BIN="framework/python/bin/python3"
+SCRIPT_PATH_NAME="$0"
+DIR_NAME="$(cd $(dirname ${SCRIPT_PATH_NAME}); pwd -P)"
+SCRIPT_NAME="$(basename ${SCRIPT_PATH_NAME})"
+
+if [ -z "${WAZUH_PATH}" ]; then
+    WAZUH_PATH="$(cd ${DIR_NAME}/..; pwd)"
+fi
+
+PYTHON_SCRIPT="${DIR_NAME}/${SCRIPT_NAME}.py"
+
+if [ -f "${WAZUH_PATH}/${WPYTHON_BIN}" ]; then
+    ${WAZUH_PATH}/${WPYTHON_BIN} ${PYTHON_SCRIPT} "$@"
+else
+    python3 ${PYTHON_SCRIPT} "$@"
+fi
